@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask MC</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Local MVP</p>
+          <h1>Ask MC</h1>
+          <p class="lede">
+            A laptop-hosted Malden Catholic chatbot powered by Ollama. It reads
+            from a local catalog for teachers, rooms, classes, office roles,
+            daily news, school events, sports calendar, and approved school resources.
+          </p>
+          <div class="status-panel">
+            <div>
+              <span class="status-label">Model</span>
+              <strong id="model-name">Checking...</strong>
+            </div>
+            <div>
+              <span class="status-label">Status</span>
+              <strong id="model-status">Checking...</strong>
+            </div>
+            <div>
+              <span class="status-label">Knowledge</span>
+              <strong id="resource-count">Checking...</strong>
+            </div>
+            <div>
+              <span class="status-label">Pending Intake</span>
+              <strong id="pending-count">Checking...</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="control-card">
+          <h2>Try these</h2>
+          <div class="prompt-list">
+            <button class="prompt-chip" data-prompt="How do I apply to Malden Catholic?">
+              How do I apply?
+            </button>
+            <button class="prompt-chip" data-prompt="What transportation options are available?">
+              Transportation options
+            </button>
+            <button class="prompt-chip" data-prompt="When is new student orientation?">
+              Orientation timing
+            </button>
+            <button class="prompt-chip" data-prompt="How do I contact counseling?">
+              Counseling contact
+            </button>
+            <button class="prompt-chip" data-prompt="What is the latest daily news?">
+              Daily news
+            </button>
+            <button class="prompt-chip" data-prompt="What is the next school event?">
+              Next event
+            </button>
+            <button class="prompt-chip" data-prompt="What is the next sports game?">
+              Next game
+            </button>
+          </div>
+          <p class="edit-note">
+            To add approved records, edit the catalog seed or raw submissions
+            files and rebuild the catalog.
+          </p>
+        </aside>
+      </section>
+
+      <section class="chat-layout">
+        <div class="chat-card">
+          <div id="messages" class="messages"></div>
+          <form id="chat-form" class="chat-form">
+            <label class="sr-only" for="message-input">Message</label>
+            <textarea
+              id="message-input"
+              name="message"
+              rows="3"
+              placeholder="Ask about admissions, transportation, school links, or local room/staff data..."
+            ></textarea>
+            <button id="send-button" type="submit">Send</button>
+          </form>
+        </div>
+
+        <aside class="notes-card">
+          <h2>Guardrails</h2>
+          <ul>
+            <li>Read-only answers from approved school info and local catalog data.</li>
+            <li>No student records or private systems.</li>
+            <li>No made-up room numbers, schedules, or game details.</li>
+            <li>Missing info should be added to the raw intake or approved catalog.</li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "local-campus-map-starter",
+    "title": "Campus Locations Starter",
+    "category": "campus",
+    "source_type": "local",
+    "is_placeholder": true,
+    "summary": "Starter campus location data maintained locally by the chatbot team. Replace placeholders with official school-approved room information.",
+    "keywords": [
+      "room",
+      "rooms",
+      "office",
+      "where is",
+      "front desk",
+      "nurse",
+      "gym",
+      "library",
+      "learning commons"
+    ],
+    "details": [
+      "Main office and front desk: add the exact room or landmark here.",
+      "Nurse / health center: add the exact location here.",
+      "Learning Commons / library: add the exact location here.",
+      "Doherty Gymnasium is referenced on official MC pages, but add directions students should actually follow on campus."
+    ],
+    "contacts": [],
+    "source_url": null,
+    "source_note": "Local admin-maintained file. This is not scraped from the official website."
+  },
+  {
+    "id": "local-bell-schedule-starter",
+    "title": "Bell Schedule Starter",
+    "category": "schedule",
+    "source_type": "local",
+    "is_placeholder": true,
+    "summary": "Local schedule placeholder for the chatbot. Add the official bell schedule before using this answer for students.",
+    "keywords": [
+      "schedule",
+      "bell schedule",
+      "periods",
+      "lunch block",
+      "advisory",
+      "time"
+    ],
+    "details": [
+      "School hours from the official FAQ are 8:00 AM to 2:20 PM.",
+      "Add the current bell schedule periods here once the school approves them for the bot."
+    ],
+    "contacts": [],
+    "source_url": null,
+    "source_note": "Local admin-maintained file."
+  },
+  {
+    "id": "local-staff-contacts-starter",
+    "title": "Staff Contacts Starter",
+    "category": "people",
+    "source_type": "local",
+    "is_placeholder": true,
+    "summary": "Use this file for staff contacts the school team wants the bot to route students to directly.",
+    "keywords": [
+      "contact",
+      "who do i talk to",
+      "dean",
+      "attendance",
+      "guidance",
+      "principal",
+      "athletic director"
+    ],
+    "details": [
+      "Add approved staff roles, emails, and office locations here.",
+      "Only include contacts the school is comfortable exposing through the bot."
+    ],
+    "contacts": [
+      {
+        "name": "Chatbot Team",
+        "role": "Local data owner",
+        "email": "replace-this-with-a-real-owner@example.com"
+      }
+    ],
+    "source_url": null,
+    "source_note": "Local admin-maintained file."
+  }
+]

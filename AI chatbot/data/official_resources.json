@@ -1,0 +1,235 @@
+[
+  {
+    "id": "official-apply-process",
+    "title": "Admissions Process",
+    "category": "admissions",
+    "source_type": "official",
+    "summary": "Applicants create a Ravenna account, complete the application, submit forms and transcripts, and then enroll if admitted.",
+    "keywords": [
+      "apply",
+      "application",
+      "admissions",
+      "ravenna",
+      "shadow day",
+      "hspt",
+      "grade 9",
+      "grade 7",
+      "grade 8",
+      "transfer"
+    ],
+    "details": [
+      "The official application portal is Ravenna.",
+      "For domestic grade 9 applicants, the admissions process includes the HSPT.",
+      "The 2025 HSPT test dates listed on the official page are November 8, November 22, and December 13, 2025.",
+      "Domestic applicants for grades 7 and 8 submit transcripts, recommendations, and recent standardized testing results such as MCAS or MAP.",
+      "The admissions page says decisions for grade 9 are released on February 1 and middle school decisions are released on February 27."
+    ],
+    "contacts": [
+      {
+        "name": "Office of Admission",
+        "role": "Admissions Office",
+        "email": "oneilm@maldencatholic.org",
+        "phone": "978-781-475-5308"
+      },
+      {
+        "name": "Mrs. Mustone",
+        "role": "Admissions contact for visits",
+        "phone": "781-475-5393"
+      }
+    ],
+    "source_url": "https://www.maldencatholic.org/admissions/apply",
+    "source_note": "Official Malden Catholic admissions process page checked March 23, 2026."
+  },
+  {
+    "id": "official-admissions-faq",
+    "title": "Admissions FAQ",
+    "category": "admissions",
+    "source_type": "official",
+    "summary": "The FAQ covers devices, uniforms, financial aid, transportation, lunch, languages, support services, and the school day.",
+    "keywords": [
+      "faq",
+      "laptop",
+      "device",
+      "uniform",
+      "financial aid",
+      "payment plan",
+      "lunch",
+      "language",
+      "school day",
+      "start time",
+      "end time",
+      "504",
+      "iep"
+    ],
+    "details": [
+      "High school students are required to bring their own Windows 11 laptop.",
+      "Middle school students do not need a device during school hours, though access to an internet-connected device at home is recommended.",
+      "The FAQ says school hours are 8:00 AM to 2:20 PM.",
+      "The FAQ says Latin, Spanish, and Italian are offered.",
+      "Financial aid and FACTS payment plans are available according to the FAQ."
+    ],
+    "contacts": [
+      {
+        "name": "Office of Admission",
+        "role": "Admissions Office",
+        "email": "oneilm@maldencatholic.org",
+        "phone": "978-781-475-5308"
+      }
+    ],
+    "source_url": "https://www.maldencatholic.org/admissions/mc-faq",
+    "source_note": "Official Malden Catholic FAQ page checked March 23, 2026."
+  },
+  {
+    "id": "official-transportation",
+    "title": "Transportation",
+    "category": "student life",
+    "source_type": "official",
+    "summary": "Malden Catholic lists bus routes, MBTA directions, and MBTA M7/S-card information on the transportation page.",
+    "keywords": [
+      "transportation",
+      "bus",
+      "mbta",
+      "charliecard",
+      "route",
+      "wakefield",
+      "wilmington",
+      "woburn",
+      "peabody",
+      "lynnfield",
+      "east boston",
+      "north end",
+      "charlestown"
+    ],
+    "details": [
+      "Malden Catholic says it runs 3 bus routes serving Wilmington, Woburn, Medford, Peabody, Lynnfield, Wakefield, East Boston, North End, and Charlestown.",
+      "The page directs families to MBTA route information and describes walking directions from nearby bus stops.",
+      "The transportation page says MBTA M7 and S-cards can be requested through the school.",
+      "The page says M7 cards require payment in full of $300 for the school year before a card can be issued."
+    ],
+    "contacts": [
+      {
+        "name": "Mrs. Mustone",
+        "role": "Transportation contact",
+        "phone": "781-475-5393"
+      },
+      {
+        "name": "Mrs. Marianna Cavuoto",
+        "role": "M7 and S-card contact for families outside Boston",
+        "email": "cavuotom@maldencatholic.org"
+      }
+    ],
+    "source_url": "https://www.maldencatholic.org/student-life/transportation",
+    "source_note": "Official Malden Catholic transportation page checked March 23, 2026."
+  },
+  {
+    "id": "official-onboarding",
+    "title": "New Student Onboarding",
+    "category": "student life",
+    "source_type": "official",
+    "summary": "The onboarding page covers spring orientation, MC Experience, uniforms, and how to contact the organizer.",
+    "keywords": [
+      "orientation",
+      "onboarding",
+      "new student",
+      "mc experience",
+      "mcx",
+      "freshman",
+      "class of 2029"
+    ],
+    "details": [
+      "The page lists Spring Orientation for girls on April 7 at 6 PM and boys on April 14 at 6 PM.",
+      "The MC Experience is listed for August 12 to August 14 from 8:30 AM to 12 PM.",
+      "The page says students should be in school uniforms for the first two days of MC Experience.",
+      "Students do not need laptops until Freshman Orientation according to the page."
+    ],
+    "contacts": [
+      {
+        "name": "Mrs. Mustone",
+        "role": "Orientation contact",
+        "email": "mustonem@maldencatholic.org"
+      }
+    ],
+    "source_url": "https://www.maldencatholic.org/student-life/newstudent",
+    "source_note": "Official Malden Catholic onboarding page checked March 23, 2026."
+  },
+  {
+    "id": "official-counseling",
+    "title": "School & College Counseling",
+    "category": "academics",
+    "source_type": "official",
+    "summary": "The counseling page explains academic, personal, and college counseling support plus resources like transcript forms.",
+    "keywords": [
+      "counseling",
+      "college counseling",
+      "transcript",
+      "naviance",
+      "fafsa",
+      "college fair",
+      "guidance"
+    ],
+    "details": [
+      "The counseling department provides individual and group guidance, parent and faculty consultation, and coordination of services.",
+      "The page says college visit schedules are available through the School and College Counseling office.",
+      "Current seniors can access a transcript release form from the counseling page.",
+      "The page highlights college and financial aid resources including Naviance, FAFSA, and the Common Application."
+    ],
+    "contacts": [
+      {
+        "name": "School Counseling Office",
+        "role": "Counseling Office",
+        "phone": "781-475-5327"
+      }
+    ],
+    "source_url": "https://www.maldencatholic.org/academics/school-college-counseling",
+    "source_note": "Official Malden Catholic counseling page checked March 23, 2026."
+  },
+  {
+    "id": "official-athletics-calendar",
+    "title": "Athletics Calendar",
+    "category": "athletics",
+    "source_type": "official",
+    "summary": "The athletics calendar page points students and families to upcoming games and the BigTeams calendar.",
+    "keywords": [
+      "athletics",
+      "sports",
+      "games",
+      "calendar",
+      "bigteams"
+    ],
+    "details": [
+      "The athletics page says families can stay up to date with upcoming games on the athletics calendar and on BigTeams.",
+      "The BigTeams calendar link is included on the official page."
+    ],
+    "contacts": [],
+    "source_url": "https://www.maldencatholic.org/athletics/athletics-calendar",
+    "source_note": "Official Malden Catholic athletics calendar page checked March 23, 2026."
+  },
+  {
+    "id": "official-general-links",
+    "title": "Main School Links",
+    "category": "general",
+    "source_type": "official",
+    "summary": "The Malden Catholic site header includes quick access links for the calendar, applying, inquiring, Lancerlink, and the parent portal.",
+    "keywords": [
+      "calendar",
+      "apply",
+      "inquire",
+      "lancerlink",
+      "parent portal",
+      "quick links"
+    ],
+    "details": [
+      "The main website navigation includes Calendar, Apply, Inquire, Lancerlink, and Parent Portal links.",
+      "If someone needs the official website home page, send them to the main Malden Catholic site."
+    ],
+    "contacts": [
+      {
+        "name": "Main Office",
+        "role": "General school contact",
+        "phone": "781-322-3098"
+      }
+    ],
+    "source_url": "https://www.maldencatholic.org/",
+    "source_note": "Main Malden Catholic website checked March 23, 2026."
+  }
+]

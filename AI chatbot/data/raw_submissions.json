@@ -1,0 +1,100 @@
+[
+  {
+    "id": "raw-manual-event-2026-04-10-open-house",
+    "collector_name": "Manual Event Intake",
+    "category": "events calendar",
+    "target_table": "events",
+    "raw_text": "Admissions open house for prospective families.",
+    "status": "approved",
+    "submitted_at": "2026-04-10",
+    "source_system": "manual",
+    "notes": "Manual local event import for 'Open House'.",
+    "payload": {
+      "id": "event-2026-04-10-open-house",
+      "title": "Open House",
+      "event_date": "2026-04-10",
+      "start_time": "18:00",
+      "end_time": null,
+      "location": "Main Building",
+      "category": "school event",
+      "audience": "school community",
+      "summary": "Admissions open house for prospective families.",
+      "details": null,
+      "source_url": null,
+      "owner": "Manual Event Intake",
+      "last_updated": "2026-04-10",
+      "active": true,
+      "is_placeholder": false
+    }
+  },
+  {
+    "id": "raw-sports-001",
+    "collector_name": "Athletics Office",
+    "category": "sports calendar",
+    "target_table": "sports_games",
+    "raw_text": "Varsity soccer vs Example Academy on March 29 at 4:00 PM, away. Needs approval from athletics before students see it.",
+    "status": "pending",
+    "submitted_at": "2026-03-24",
+    "source_system": "sportsyou",
+    "notes": "This shows how SportsYou or manual athletic submissions can wait for approval."
+  },
+  {
+    "id": "raw-room-001",
+    "collector_name": "Campus Map Volunteer",
+    "category": "rooms",
+    "target_table": "rooms",
+    "raw_text": "Nurse office is first floor near the front desk. Exact room number still needs verification.",
+    "status": "pending",
+    "submitted_at": "2026-03-24",
+    "source_system": "manual",
+    "notes": "Pending because the exact room number is not confirmed yet."
+  },
+  {
+    "id": "raw-news-001",
+    "collector_name": "Student Ambassador Team",
+    "category": "daily news",
+    "target_table": "news_items",
+    "raw_text": "Spring Orientation reminder: girls on April 7 at 6 PM and boys on April 14 at 6 PM. Families should attend.",
+    "status": "approved",
+    "submitted_at": "2026-03-24",
+    "source_system": "manual",
+    "notes": "Example of an approved raw submission becoming a news item.",
+    "payload": {
+      "id": "news-spring-orientation-reminder",
+      "title": "Spring Orientation Reminder",
+      "summary": "Spring Orientation is listed for girls on April 7 at 6 PM and boys on April 14 at 6 PM.",
+      "publish_date": "2026-03-24",
+      "audience": "new students",
+      "category": "student life",
+      "source_url": "https://www.maldencatholic.org/student-life/newstudent",
+      "owner": "Student Life Team",
+      "last_updated": "2026-03-24",
+      "active": true,
+      "is_placeholder": false
+    }
+  },
+  {
+    "id": "raw-manual-news-2026-03-24-daily-announcements-3-24-26",
+    "collector_name": "Manual News Intake",
+    "category": "daily news",
+    "target_table": "news_items",
+    "raw_text": "This is a local-only test announcement for the chatbot rebuild. Students should check the office for details.",
+    "status": "approved",
+    "submitted_at": "2026-03-24",
+    "source_system": "manual",
+    "notes": "Manual local news import for 'Daily Announcements 3.24.26'.",
+    "payload": {
+      "id": "news-2026-03-24-daily-announcements-3-24-26",
+      "title": "Daily Announcements 3.24.26",
+      "summary": "This is a local-only test announcement for the chatbot rebuild. Students should check the office for details.",
+      "publish_date": "2026-03-24",
+      "audience": "school community",
+      "category": "daily announcements",
+      "source_url": null,
+      "owner": "Manual News Intake",
+      "last_updated": "2026-03-24",
+      "active": true,
+      "is_placeholder": false
+    }
+  }
+]
