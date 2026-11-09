@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+chroma_langchain_db/
+.DS_Store
+.env
+.private/
+database/Outlook News.csv
+database/Sports Calendar.csv

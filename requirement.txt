@@ -1,0 +1,11 @@
+langchain
+langchain-ollama
+langchain-chroma
+pandas
+protobuf<7
+beautifulsoup4
+certifi
+msal
+python-dotenv
+requests
+httpx
