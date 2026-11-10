@@ -2,10 +2,10 @@
 
 A local Malden Catholic school assistant built with Python, Ollama, LangChain,
 and Chroma. It searches school CSV records and uses the retrieved information
-to answer questions in the terminal.
+to answer questions in the terminal or on a local web page.
 
 The earlier browser-based prototype remains in [AI chatbot](AI%20chatbot/README.md).
-This guide covers the terminal chatbot at the repository root.
+This guide covers the chatbot at the repository root.
 
 ## Setup
 
@@ -26,7 +26,31 @@ or upgrades the local vector index and may take longer than later questions.
 Calendar answers use the saved schedule directly and do not need Ollama.
 Enter `q` to quit; Ctrl+C during an answer cancels that answer.
 
-Commands inside the chatbot:
+## Web page
+
+To chat in a browser instead of the terminal, run:
+
+```bash
+python web.py
+```
+
+Then open <http://127.0.0.1:8000>. The page streams answers as they are
+written, turns `[1]` citations into links to the records consulted, and has a
+**Stop** button while an answer is in progress. **Data status** in the top bar
+shows the same information as `/status`, and **Check for updates** does the
+same as `/sync`.
+
+- `web.py`: a small FastAPI server. It calls the same functions as `main.py`
+  and sends each step of an answer to the page as one line of JSON.
+- `web/`: the page itself (`index.html`, `styles.css`, `app.js`), with no
+  build step or JavaScript libraries.
+
+The server only accepts connections from the same computer. Options:
+`--port 8080` to use another port, `--no-sync` to skip background refreshes.
+
+## Terminal commands
+
+Commands inside the terminal chatbot:
 
 - `/status`: show each source's last successful refresh and any connection problem.
 - `/sync`: request a refresh in the background.

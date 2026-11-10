@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask MC</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">MC</span>
+          <div>
+            <h1>Ask MC</h1>
+            <p>Malden Catholic school assistant</p>
+          </div>
+        </div>
+
+        <!-- The same information as /status and /sync in the terminal. -->
+        <details class="status" id="status">
+          <summary>
+            <span class="dot" id="status-dot"></span>
+            Data status
+          </summary>
+          <div class="status-panel">
+            <ul id="status-list"></ul>
+            <button type="button" class="ghost" id="sync-button">Check for updates</button>
+            <p class="status-note" id="sync-note" role="status"></p>
+          </div>
+        </details>
+      </header>
+
+      <main class="chat" id="chat">
+        <section class="welcome" id="welcome">
+          <h2>What would you like to know?</h2>
+          <p>Ask about admissions, courses, clubs, staff, rooms, or the athletics schedule.</p>
+          <div class="suggestions">
+            <button type="button" class="chip">When is the next girls varsity soccer game?</button>
+            <button type="button" class="chip">Show boys JV basketball games next week.</button>
+            <button type="button" class="chip">What laptop do students need?</button>
+            <button type="button" class="chip">What clubs can I join?</button>
+          </div>
+        </section>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </main>
+
+      <footer class="composer-area">
+        <form class="composer" id="composer">
+          <label class="sr-only" for="question">Your question</label>
+          <textarea id="question" rows="1" maxlength="1000"
+                    placeholder="Ask a question about Malden Catholic…" autofocus></textarea>
+          <button type="submit" id="send">Send</button>
+        </form>
+        <p class="disclaimer">
+          Answers come from saved school records. Check the linked source for anything time-sensitive.
+        </p>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

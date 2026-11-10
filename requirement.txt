@@ -9,3 +9,5 @@ msal
 python-dotenv
 requests
 httpx
+fastapi
+uvicorn

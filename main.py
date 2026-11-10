@@ -46,9 +46,14 @@ def _safe_url(value: str) -> str:
     return value.strip().rstrip(".,;)") if value.startswith(("https://", "http://")) else ""
 
 
-def format_records(documents) -> tuple[str, str]:
-    """Label exactly the records supplied to the model and list their provenance."""
-    blocks, sources = [], []
+def select_records(documents) -> tuple[list[str], list[dict]]:
+    """Pick the records that fit the context budget and describe where each came from.
+
+    Returns the numbered text blocks for the model and one dictionary per block
+    (number, source, row, url, path, notes) so the terminal and the web page can
+    each display the same sources in their own way.
+    """
+    blocks, entries = [], []
     length = 0
     for document in documents:
         metadata = document.metadata
@@ -62,22 +67,40 @@ def format_records(documents) -> tuple[str, str]:
             block = block[:MAX_CONTEXT_CHARS] + "\n[Record excerpt ends here.]"
         blocks.append(block)
         length += len(block)
-        row = metadata.get("row")
-        label = f"[{number}] {source}" + (f", record row {row}" if row else "")
         url = _safe_url(str(metadata.get("source_url", "")))
         if not url:
             matches = re.findall(r"https?://[^\s<>\"\]]+", content)
             url = _safe_url(matches[0]) if matches else ""
-        if url:
-            label += f" — {url}"
-        else:
+        path = ""
+        if not url:
             candidate = (PROJECT_DIR / source).resolve()
             if candidate.is_relative_to(PROJECT_DIR):
-                label += f" — {candidate}"
+                path = str(candidate)
         # An index timestamp is not a date at which the school verified a fact.
-        for key, description in (("received_at", "received"), ("verified_at", "source verified")):
-            if metadata.get(key):
-                label += f"; {description}: {metadata[key]}"
+        notes = [
+            f"{description}: {metadata[key]}"
+            for key, description in (("received_at", "received"), ("verified_at", "source verified"))
+            if metadata.get(key)
+        ]
+        entries.append({
+            "number": number, "source": source, "row": metadata.get("row") or None,
+            "url": url, "path": path, "notes": notes,
+        })
+    return blocks, entries
+
+
+def format_records(documents) -> tuple[str, str]:
+    """Label exactly the records supplied to the model and list their provenance."""
+    blocks, entries = select_records(documents)
+    sources = []
+    for entry in entries:
+        label = f"[{entry['number']}] {entry['source']}"
+        if entry["row"]:
+            label += f", record row {entry['row']}"
+        if entry["url"] or entry["path"]:
+            label += f" — {entry['url'] or entry['path']}"
+        for note in entry["notes"]:
+            label += f"; {note}"
         sources.append(label)
     return "\n\n---\n\n".join(blocks), "Records consulted:\n" + "\n".join(sources)
 
