@@ -5,7 +5,6 @@ the vector index, or --status for a read-only connection/freshness check.
 """
 
 import argparse
-import fcntl
 import json
 import os
 import subprocess
@@ -15,6 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from external_data import sports_sync_status, sync_sports_calendar
+from file_lock import try_lock
 from outlook_news import outlook_status, sync_outlook_news
 
 
@@ -31,7 +31,7 @@ def run_sync(force: bool = False, index: bool = False) -> dict:
     PRIVATE_DIR.mkdir(mode=0o700, parents=True, exist_ok=True)
     with (PRIVATE_DIR / "source_sync.lock").open("a") as lock:
         try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            try_lock(lock)
         except BlockingIOError:
             return {"status": "busy", "message": "A refresh is already running."}
 
@@ -97,6 +97,8 @@ class BackgroundSync:
                     subprocess.run(
                         [sys.executable, str(PROJECT_DIR / "sync_data.py"), "--quiet"],
                         cwd=PROJECT_DIR,
+                        # Windows would otherwise write the log in a legacy encoding.
+                        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
                         stdin=subprocess.DEVNULL,
                         stdout=log,
                         stderr=log,

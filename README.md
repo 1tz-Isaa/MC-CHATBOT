@@ -21,6 +21,16 @@ ollama pull qwen2.5:7b
 python main.py
 ```
 
+On Windows (PowerShell), the first two commands are different:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+The remaining commands are the same. Wherever this guide says
+`.venv/bin/python`, use `.venv\Scripts\python` on Windows.
+
 Keep Ollama running for general questions. The first general question builds
 or upgrades the local vector index and may take longer than later questions.
 Calendar answers use the saved schedule directly and do not need Ollama.

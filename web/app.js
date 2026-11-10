@@ -288,5 +288,9 @@ syncButton.addEventListener("click", async () => {
   }
 });
 
+// Refresh whenever the panel is opened, and once a minute.
+document.getElementById("status").addEventListener("toggle", (event) => {
+  if (event.target.open) loadStatus();
+});
 loadStatus();
 setInterval(loadStatus, 60000);
