@@ -1,10 +1,10 @@
-import fcntl
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
 import sync_data
+from file_lock import try_lock
 
 
 class SyncTests(unittest.TestCase):
@@ -41,7 +41,7 @@ class SyncTests(unittest.TestCase):
              patch.object(sync_data, "PRIVATE_DIR", Path(folder)), \
              patch.object(sync_data, "sync_sports_calendar") as sports:
             with (Path(folder) / "source_sync.lock").open("a") as lock:
-                fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                try_lock(lock)
                 result = sync_data.run_sync()
             self.assertEqual(result["status"], "busy")
             sports.assert_not_called()

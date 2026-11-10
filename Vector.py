@@ -11,9 +11,10 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
-import fcntl
 import pandas as pd
 from langchain_core.documents import Document
+
+from file_lock import try_lock, unlock
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -139,7 +140,7 @@ def load_csv_documents() -> tuple[list[Document], list[str]]:
 
 @contextmanager
 def _index_lock():
-    """Serialize this process and other local index writers on macOS/Linux."""
+    """Serialize this process and other local index writers."""
     if not _thread_lock.acquire(timeout=5):
         raise TimeoutError("The index is busy. Try again shortly.")
     handle = None
@@ -149,7 +150,7 @@ def _index_lock():
         deadline = time.monotonic() + 5
         while True:
             try:
-                fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                try_lock(handle)
                 break
             except BlockingIOError:
                 if time.monotonic() >= deadline:
@@ -158,7 +159,7 @@ def _index_lock():
         yield
     finally:
         if handle is not None:
-            fcntl.flock(handle, fcntl.LOCK_UN)
+            unlock(handle)
             os.close(handle)
         _thread_lock.release()
 

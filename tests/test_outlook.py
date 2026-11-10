@@ -154,8 +154,9 @@ class OutlookTests(unittest.TestCase):
             with self.assertRaises(OSError):
                 news._atomic_text(news.TOKEN_CACHE, "replacement", private=True)
         self.assertEqual(news.TOKEN_CACHE.read_text(), "original")
-        self.assertEqual(stat.S_IMODE(news.TOKEN_CACHE.stat().st_mode), 0o600)
-        self.assertEqual(stat.S_IMODE(news.PRIVATE_DIR.stat().st_mode), 0o700)
+        if os.name != "nt":  # Windows has no owner-only permission bits to check
+            self.assertEqual(stat.S_IMODE(news.TOKEN_CACHE.stat().st_mode), 0o600)
+            self.assertEqual(stat.S_IMODE(news.PRIVATE_DIR.stat().st_mode), 0o700)
 
     def test_successful_empty_folder_is_valid_and_updates_status(self):
         self.seed_news()
